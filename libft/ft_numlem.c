@@ -12,22 +12,22 @@
 
 #include "libft.h"
 
-size_t  ft_numlem(long int num, int base)
+size_t	ft_numlem(long int num, int base)
 {
-    size_t  i;
+	size_t	i;
 
-    i = 0;
-    if(num == 0)
-        return (0)
-    if (num < 0)
-    {
-        num *= -1
-        i++;
-    }
-    while (num > 0)
-    {
-        num /= base;
-        i++;
-    }
-    return (i);
+	i = 0;
+	if (num == 0)
+		return (0);
+	if (num < 0)
+	{
+		num *= -1;
+		i++;
+	}
+	while (num > 0)
+	{
+		num /= base;
+		i++;
+	}
+	return (i);
 }

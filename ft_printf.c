@@ -6,7 +6,7 @@
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:47:37 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/16 21:57:38 by mkaizer-         ###   ########.fr       */
+/*   Updated: 2022/08/17 20:05:11 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	conversion_selection(char *str, va_list ap)
 	if (*str == 'd' || *str == 'i')
 		i += write_di(va_arg(ap, int));
 	if (*str == 'u')
-		i += write_di(va_arg(ap, int));
+		i += write_u(va_arg(ap, int));
 	return (i);
 }
 

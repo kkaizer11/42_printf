@@ -18,7 +18,7 @@ char	*ft_uitoa(unsigned int n)
 	size_t		i;
 
 	i = ft_numlem(n, 10);
-	str = (char*)malloc(i + 1);
+	str = (char *)malloc(i + 1);
 	if (str == NULL)
 		return (NULL);
 	str[i] = '\0';
