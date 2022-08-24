@@ -6,7 +6,7 @@
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 03:52:47 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/17 20:00:03 by mkaizer-         ###   ########.fr       */
+/*   Updated: 2022/08/24 10:25:22 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# define DECIMAL "0123456789"
+# define HEX_UPPER "0123456789ABCDEF"
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
