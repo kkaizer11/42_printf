@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_uitoa.c                                         :+:      :+:    :+:   */
+/*   writers2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 19:46:07 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/16 19:46:07 by mkaizer-         ###   ########.fr       */
+/*   Created: 2022/08/24 12:52:28 by mkaizer-          #+#    #+#             */
+/*   Updated: 2022/08/24 12:52:28 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_uitoa(unsigned int n)
+int	write_hex(char *str, int arg)
 {
-	char		*str;
-	size_t		i;
+	char	*temp;
+	int		len;
+    int		upOrLow;
 
-	i = ft_numlem(n, 10);
-	str = (char *)malloc(i + 1);
-	if (str == NULL)
-		return (NULL);
-	str[i] = '\0';
-	i--;
-	if (n == 0)
-		str[0] = '0';
-	while (n > 0)
-	{
-		str[i] = DECIMAL[n % 10];
-		n /= 10;
-		i--;
-	}
-	return (str);
+    if (*str == 'X')
+        upOrLow = 0;
+    if (*str == 'x')
+        upOrLow = 1;
+    temp = ft_hextoa(arg, upOrLow);
+    ft_putstr_fd(temp, 1);
+    len = ft_strlen(temp);
+    free(temp);
+    return (len);
 }

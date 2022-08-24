@@ -2,7 +2,7 @@ NAME=			libftprintf.a
 CC=				gcc
 CC_FLAGS=		-Wall -Wextra -Werror
 RM=				/bin/rm -f
-SRC= 			ft_printf.c writers.c 
+SRC= 			ft_printf.c writers.c writers2.c 
 AR=				ar rcs
 LIBFT=			libft/libft.a
 
