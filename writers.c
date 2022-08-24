@@ -6,7 +6,7 @@
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 03:38:44 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/24 10:25:28 by mkaizer-         ###   ########.fr       */
+/*   Updated: 2022/08/24 10:41:12 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,12 @@ int	write_u(unsigned int arg)
 	char	*temp;
 	int		len;
 
-	temp = ft_uitoa(arg);
+	if (arg == '\0')
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
+	temp = ft_uitoa(arg, 10);
 	ft_putstr_fd(temp, 1);
 	len = ft_strlen(temp);
 	free(temp);

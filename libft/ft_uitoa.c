@@ -12,25 +12,37 @@
 
 #include "libft.h"
 
-char	*ft_uitoa(unsigned int n)
+char	*ft_uitoa(unsigned int n, int base)
 {
 	char		*str;
-	char *base;
+	
 	size_t		i;
 
-	base = "0123456789";
-	i = ft_numlem(n, 10);
+	i = ft_numlem(n, base);
 	str = (char *)malloc(i + 1);
 	if (str == NULL)
 		return (NULL);
 	str[i] = '\0';
+	i--;
 	if (n == 0)
 		str[0] = '0';
-	while (n > 0)
+	if (base == 10)
 	{
-		str[i - 1] = base[n % 10];
-		n /= 10;
-		i--;
+		while (n > 0)
+		{
+			str[i] = DECIMAL[n % base];
+			n /= base;
+			i--;
+		}
+	}
+	if (base == 16)
+	{
+		while (n > 0)
+		{
+			str[i] = HEX_UPPER[n % base];
+			n /= base;
+			i--;
+		}
 	}
 	return (str);
 }
