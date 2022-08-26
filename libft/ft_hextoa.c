@@ -5,40 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 15:02:56 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/24 15:02:56 by mkaizer-         ###   ########.fr       */
+/*   Created: 2022/08/26 15:29:57 by mkaizer-          #+#    #+#             */
+/*   Updated: 2022/08/26 15:29:57 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include	"libft.h"
 
-char	*ft_hextoa(unsigned int n, int upper_or_lower)
+int	ft_lennumm(unsigned long long int num)
 {
-	char	*str;
-    char	*base;
-	size_t	i;
+	unsigned int	len;
 
-    if (upper_or_lower == 0)
-    {
-        base = HEX_UPPER;
-    }
-    if (upper_or_lower == 1)
-    {
+	len = 1;
+	while (num >= 16)
+	{
+		num = num / 16;
+		len++;
+	}
+	return (len);
+}
+
+char	*ft_hextoa(unsigned long long int num, int upper_or_lower)
+{
+	char			*base;
+    unsigned int	len_str;
+	char			*str;
+
+	if (upper_or_lower == 0)
         base = HEX_LOWER;
-    }
-	i = ft_numlem(n, 16);
-	str = (char *)malloc(i + 1);
+    if (upper_or_lower == 1)
+        base = HEX_UPPER;
+    len_str = ft_lennumm(num);
+	str = calloc(len_str + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	str[i] = '\0';
-	i--;
-	if (n == 0)
-		str[0] = '0';
-	while (n > 0)
+	while (len_str > 0)
 	{
-		str[i] = base[n % 16];
-		n /= 16;
-		i--;
+		len_str--;
+		str[len_str] = base[num % 16];
+		num = num / 16;
 	}
+	if (len_str == 1)
+		str[0] = '0';
 	return (str);
 }

@@ -16,13 +16,13 @@ int	write_hex(char *str, int arg)
 {
 	char	*temp;
 	int		len;
-    int		upOrLow;
+    int		up_or_low;
 
-    if (*str == 'X')
-        upOrLow = 0;
     if (*str == 'x')
-        upOrLow = 1;
-    temp = ft_hextoa(arg, upOrLow);
+        up_or_low = 0;
+    if (*str == 'X')
+        up_or_low = 1;
+    temp = ft_hextoa(arg, up_or_low);
     ft_putstr_fd(temp, 1);
     len = ft_strlen(temp);
     free(temp);
