@@ -6,7 +6,7 @@
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:47:37 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/29 16:43:54 by mkaizer-         ###   ########.fr       */
+/*   Updated: 2022/08/29 22:03:01 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	conversion_selection(char *str, va_list ap)
 	if (*str == 'p')
 		i += write_p(va_arg(ap, unsigned long long int));
 	return (i);
-		
 }
 
 int	ft_printf(const char *str, ...)
