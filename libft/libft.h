@@ -6,7 +6,7 @@
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 03:52:47 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/26 15:29:39 by mkaizer-         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:41:59 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_uitoa(unsigned int n);
-char	*ft_hextoa(unsigned long long int n, int upper_or_lower);
+char	*ft_hextoa(unsigned long long int num, int upper_or_lower);
 
 #endif

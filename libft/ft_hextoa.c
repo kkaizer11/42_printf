@@ -28,14 +28,14 @@ int	ft_lennumm(unsigned long long int num)
 char	*ft_hextoa(unsigned long long int num, int upper_or_lower)
 {
 	char			*base;
-    unsigned int	len_str;
+	unsigned int	len_str;
 	char			*str;
 
 	if (upper_or_lower == 0)
-        base = HEX_LOWER;
-    if (upper_or_lower == 1)
-        base = HEX_UPPER;
-    len_str = ft_lennumm(num);
+		base = HEX_LOWER;
+	if (upper_or_lower == 1)
+		base = HEX_UPPER;
+	len_str = ft_lennumm(num);
 	str = calloc(len_str + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mkaizer- <mkaizer-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 23:47:37 by mkaizer-          #+#    #+#             */
-/*   Updated: 2022/08/24 17:11:02 by mkaizer-         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:43:54 by mkaizer-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,11 @@ int	conversion_selection(char *str, va_list ap)
 	if (*str == 'i' || *str == 'd' || *str == 'u')
 		i += write_idu(str, va_arg(ap, int));
 	if (*str == 'X' || *str == 'x')
-		i += write_hex(str, va_arg(ap, unsigned long long int));
+		i += write_hex(str, va_arg(ap, unsigned int));
+	if (*str == 'p')
+		i += write_p(va_arg(ap, unsigned long long int));
 	return (i);
+		
 }
 
 int	ft_printf(const char *str, ...)
